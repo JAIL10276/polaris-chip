@@ -30,10 +30,204 @@
   <polaris-chip title="Faculty and Staff"></polaris-chip>
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
+  <h1>my-cards</h1>
+<div class="card-containers">
+  <!--Card 1-->
+    <my-card>
+      <div class="container">
+        <div class="card">
+          <div class="card-img">
+            <img src="https://img.freepik.com/premium-photo/cat-with-gun-that-has-cat-it_1032785-7268.jpg" alt="Cyborg Cat">
+            <div class="card-body">
+              <h1 class="card-title">Sample Title</h1>
+              <div class="card-paragraph">
+                <p>Meow Moew... Moew Moewwwwww..., Moew Moew Moew Moewwwwww...Meow!</p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <style>
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+      }
+      body {
+        font-family: 'inter', sans-serif;
+        text-align: center;
+      }
+      .card{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 600px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background-color: #ffff;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 12rem;
+        transition: transform 0.25s ease-in-out;
+        margin-top: 100px;
+      }
+      .card-img{
+        position: relative;
+      }
+      .card-body{
+        padding: 2rem;
+        max-width: 500px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+      .card-paragraph{
+        margin-top: 0.75;
+        line-height: 1.5;
+        padding: 16px;
+      }
+      .card-containers{
+        justify-content: space-around;
+        display: flex;
+        width: 100%;
+      }
+      .card:hover{
+        transform: scale(1.1);
+      }
+      p{
+        font-size: large;
+      }
+      .card-title{
+        margin-bottom: 32px;
+        
+      }
+    </style>
+    </my-card>
+  <!--Card 2-->
+    <my-card>
+      <div class="container">
+        <div class="card">
+          <div class="card-img">
+            <img src="https://www.sweetwater.com/sweetcare/media/2022/02/troubleshoot-ram-featured-image-100.jpg" alt="">
+            <div class="card-body">
+              <h1 class="card-title" style="text-align: center;">Download Free Ram</h1>
+              <button class="card-button" onclick= "window.location.href='https://downloadmoreram.com/';">Download Now!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+      .card-button{
+        margin-top: 0.75;
+        line-height: 1.5;
+        border-radius: 12px;
+        width: 100%;
+        border: none;
+        background-color: #04AA6D;
+        padding: 15px 32px;
+        display: inline-block;
+        font-size: 32px;
+      }
+      .card-button:hover{
+        background-color: #038555;
+      }
 
-  <h1>my-card</h1>
-  <my-card></my-card>
+      </style>
+    </my-card>
+  <!--Card 3-->
+    <my-card>
+      <div class="jonker-container">
+        <div class="jonker-card">
+          <div class="jonker-front">
+            <h1 style="color: white;">Why so serious?</h1>
+          </div>
+          <div class="jonker-back">
+            <!--Image?-->
+            
+          </div>
+        </div>
+      <style>
+      .jonker-container{
+        width: 500px;
+        height: 500px;
+        margin-top: 50px;
+        overflow: hidden;
+        height: 100vh;
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        margin-right: 300px;
+      }
+      .jonker-card{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+      }
+      .jonker-container:hover > .jonker-card{
+        cursor: pointer;
+        transform: rotateY(180deg);        
+      }
+      .jonker-front,.jonker-back {
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+        position: absolute;
+        backface-visibility: hidden;
+      }
+      .jonker-back{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzC9hgHMTqqqc8VLmEuGx3AyTV-FQDGUl_mA&s);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+      }
+      .jonker-front{
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
 
+      }
+      
+      </style>
+    </my-card>
+  <!-- Card 4-->
+  <my-card>
+    <div class="container">
+      <div class="card">
+        <div class="card-img">
+          <img src="https://img.freepik.com/premium-photo/cat-with-gun-that-has-cat-it_1032785-7268.jpg" alt="Cyborg Cat" >
+          <div class="card-body">
+            <h1 class="card-title">Sample Title</h1>
+            <div class="card-paragraph">
+              <p>Meow Moew... Moew Moewwwwww..., Moew Moew Moew Moewwwwww...Meow!</p>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </my-card>
+  <!--Card 5-->
+    
+</div>
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
