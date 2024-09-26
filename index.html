@@ -19,11 +19,41 @@
     polaris-chip {
       margin: 16px;
     }
+    my-card.pie {
+      --my-card-change-bg: #545454;
+      --my-card-change-hover: #101A23;
+    }
+    my-card.hotmom {
+      --my-card-change-bg: rgb(209, 113, 129);
+      --my-card-change-hover: #C62466;
+    }
+    my-card.skin {
+      --my-card-change-bg: #492971;
+      --my-card-change-hover: #1b271c;
+    }
+    my-card.kyak {
+      --my-card-change-bg: #1a4f76;
+    }
+    button {
+      background-color: #492971;
+      border-radius: 8px;
+      color: white;
+      margin: 4px;
+      font-size: 16px;
+    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
 
 <body>
+  <div class="code-by-number-buttons"></div>
+    <button class="make">Clone Card</button>
+    <button class="delete">Delete Last</button>
+    <button id="change-bg">Change Background</button>
+    <button id="change-img">Change Image</button>
+    <button id="change-title">Change Title</button>
+  </div>
+
   <h1>polaris-chip</h1>
   <!-- this is going to do whatever the tag's defaults are -->
   <polaris-chip title="News of Record" link="https://psu.edu/" shiny></polaris-chip>
@@ -33,23 +63,85 @@
 
 <div class="my-card">
   <h1>my-card</h1>
-  <my-card image="http://1.bp.blogspot.com/-BUFCNEfkhlo/UHiKtgEXCfI/AAAAAAAAc9o/x5Dz_nB6GsE/s1600/Crab+Shack.jpg" 
-  title="CRISPY's CRAB SHACK IS IN YOUR TOWN" text="COME ON DOWN TO THE SHACK FOR ALL YOUR CRUSTACEOUS NEEDS!" 
-  text2="Crispy's has been providing quality crab delicacies since 1870." link="https://hax.psu.edu" bTitle="STEP INTO BUTTERY PARADISE">
-  </my-card>
-  <my-card image="https://tse4.mm.bing.net/th?id=OIP.7gJh4ZefUe9qaih95IWQgwHaGU&pid=Api" title="HOT MOMS IN YOUR AREA!!!!!!" text="THESE MOMS WANT TO TALK TO yOU!" text2="HURRY BEFORE ITS TOO LATE!!!"
-  link="https://www.youtube.com/watch?v=GFq6wH5JR2A" bTitle="CLICK HERE FOR HOT MOMS!!"></my-card>
-  <my-card image="https://wallpapercave.com/wp/wp4932503.jpg" title="Peanut Butter Pie" text="Peanut butter pie" text2="is so Good" link="https://www.allrecipes.com/recipe/12181/no-bake-peanut-butter-pie/" bTitle="Peanut Butter Pie"></my-card>
-  <my-card image="data:image/jpeg;base64,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" 
-  title="Tired of Skin?" text="If your skin is bothering, just take it off" text2="Give it to me." link="https://media.istockphoto.com/id/160368735/photo/beautiful-cupped-hands-of-young-woman-cut-out.jpg?s=612x612&w=0&k=20&c=7Wi68wNQrFmg2Wln9ze4HpoYJZCf0pk1O4xJql9z5zw=" bTitle="Give It To Me"></my-card>
-  <my-card image="http://www.killarneyoutfitters.com/photos/Ken_whiting_Aurora.jpg" title="Need a Kyak? Worry No More!" text="I will give you this kyak For Free. Please take it off of my hands. Absolutley Free! No questions asked. please don't ask questions. Just take it! No worries. Just take the kyak." 
-  text2="Please. Just take it. My wife left me because of this kyak. She took the kids, and repossessed the house. I have nothing. I've been living in the parkinglot behind the Arby's for 3 months dodging law enforcement. This Kyak has ruined me, and I can't stand to look at my old life any longer. Please, by god, if you are kind, just take the kyak. I beg you." 
-  link="https://www.facebook.com/marketplace/item/1462177331843635/?ref=category_feed&referral_code=null&referral_story_type=listing&tracking=%7B%22qid%22%3A%22-1240996435866874224%22%2C%22mf_story_key%22%3A%227661610917272728%22%2C%22commerce_rank_obj%22%3A%22%7B%5C%22target_id%5C%22%3A7661610917272728%2C%5C%22target_type%5C%22%3A0%2C%5C%22primary_position%5C%22%3A22%2C%5C%22ranking_signature%5C%22%3A7449103215058696623%2C%5C%22commerce_channel%5C%22%3A504%2C%5C%22value%5C%22%3A3.046266177236e-5%2C%5C%22candidate_retrieval_source_map%5C%22%3A%7B%5C%227661610917272728%5C%22%3A3003%7D%7D%22%7D" bTitle="Pick Up Today!"></my-card>
+  <!--CRISPY's CRAB SHACK-->
+  <my-card fancy image="http://1.bp.blogspot.com/-BUFCNEfkhlo/UHiKtgEXCfI/AAAAAAAAc9o/x5Dz_nB6GsE/s1600/Crab+Shack.jpg" 
+  title="CRISPY's CRAB SHACK IS IN YOUR TOWN" 
+  line="COME ON DOWN TO THE SHACK FOR ALL YOUR CRUSTACEOUS NEEDS!" 
+  link="https://hax.psu.edu"
+  buttonTitle="STEP INTO BUTTERY PARADISE">
+  <details></details>
+  <p slot="CCC">Crispy's has been providing quality crab delicacies since 1870.</p>
+  <p slot="detes">pee pee poo poo</p>
+</my-card>
+
+  <!--HOT MOMS-->
+  <my-card fancy class="hotmom" 
+  image="https://tse4.mm.bing.net/th?id=OIP.7gJh4ZefUe9qaih95IWQgwHaGU&pid=Api" 
+  title="HOT MOMS IN YOUR AREA!!!!!!" 
+  line="THESE MOMS WANT TO TALK TO yOU!"
+  link="https://www.youtube.com/watch?v=GFq6wH5JR2A" 
+  buttonTitle="CLICK HERE FOR HOT MOMS!!">
+</my-card>
+
+  <!--PEANUT BUTTER PIE-->
+  <my-card class="pie" 
+  image="https://wallpapercave.com/wp/wp4932503.jpg" 
+  title="Peanut Butter Pie" 
+  line="Peanut butter pie"
+  link="https://www.allrecipes.com/recipe/12181/no-bake-peanut-butter-pie/" 
+  buttonTitle="Peanut Butter Pie">
+  <strong slot="PBP"> is so good</strong>
+</my-card>
+
+  <!--SKIN-->
+  <my-card class="skin"
+  image="data:image/jpeg;base64,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" 
+  title="Tired of Skin?" 
+  line="If your skin is bothering, just take it off"
+  link="https://media.istockphoto.com/id/160368735/photo/beautiful-cupped-hands-of-young-woman-cut-out.jpg?s=612x612&w=0&k=20&c=7Wi68wNQrFmg2Wln9ze4HpoYJZCf0pk1O4xJql9z5zw=" 
+  buttonTitle="Give It To Me">
+  <p slot="SKN">Give it to me.</p>
+</my-card>
+
+  <!--KYAK-->
+  <my-card class="kyak"
+  image="http://www.killarneyoutfitters.com/photos/Ken_whiting_Aurora.jpg" 
+  title="Need a Kyak? Worry No More!" 
+  line="I will give you this kyak For Free. Please take it off of my hands. Absolutley Free! No questions asked. please don't ask questions. Just take it! No worries. Just take the kyak." 
+  link="https://www.facebook.com/marketplace/item/1462177331843635/?ref=category_feed&referral_code=null&referral_story_type=listing&tracking=%7B%22qid%22%3A%22-1240996435866874224%22%2C%22mf_story_key%22%3A%227661610917272728%22%2C%22commerce_rank_obj%22%3A%22%7B%5C%22target_id%5C%22%3A7661610917272728%2C%5C%22target_type%5C%22%3A0%2C%5C%22primary_position%5C%22%3A22%2C%5C%22ranking_signature%5C%22%3A7449103215058696623%2C%5C%22commerce_channel%5C%22%3A504%2C%5C%22value%5C%22%3A3.046266177236e-5%2C%5C%22candidate_retrieval_source_map%5C%22%3A%7B%5C%227661610917272728%5C%22%3A3003%7D%7D%22%7D" 
+  buttonTitle="Pick Up Today!">
+  <p slot="KY">"Please. Just take it. My wife left me because of this kyak. She took the kids, and repossessed the house. I have nothing. I've been living in the parkinglot behind the Arby's for 3 months dodging law enforcement. This Kyak has ruined me, and I can't stand to look at my old life any longer. Please, by god, if you are kind, just take the kyak. I beg you."</p>
+</my-card>
 </div>
 
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
+  <script>
+  document.querySelector('.make').addEventListener('click', function(event) {
+    const newCard = document.querySelector('my-card').cloneNode(true);
+   document.querySelector('body').appendChild(newCard);
+  });
+  
+  document.querySelector('.delete').addEventListener('click', function(event) {
+    if (document.querySelectorAll('my-card').length > 1) {
+    document.querySelector('my-card:last-child').remove();}
+  });
+  
+  document.querySelector('#change-bg').addEventListener('click', function(event) {
+    //document.querySelector('.main').classList.add('bckgrnd');
+    //^^^above code won't work for some reason.
+    document.querySelector('my-card').fancy = !document.querySelector('my-card').fancy;
+  });
+  
+  document.querySelector('#change-img').addEventListener('click', function(event) {
+    document.querySelector('my-card').image = "https://i.kym-cdn.com/entries/icons/mobile/000/035/557/Hi_Bingus.jpg";
+  });
+  
+  document.querySelector('#change-title').addEventListener('click', function(event) {
+    document.querySelector('my-card').title = "BINGUS!";
+  });
+  </script>
 </body>
 
 </html>
